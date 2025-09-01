@@ -10,25 +10,6 @@ static const int kBackLog = 2;
 
 std::string get_head_commit_hash() {
 	std::string head_hash;
-//
-//	git_repository* repo = nullptr;
-//	if (git_repository_open(&repo, ".") < 0) {
-//		std::cerr << "Failed to open repository" << std::endl;
-//		return NULL;
-//	}
-//
-//	git_reference *head = nullptr;
-//	if (git_repository_head(&head, repo) < 0) {
-//		std::cerr << "Failed to get HEAD" << std::endl;
-//		git_repository_free(repo);
-//		return NULL;
-//	}
-//
-//	// get commit ID
-//	const git_oid* oid = git_reference_target(head);
-//	char hash[GIT_OID_HEXSZ + 1];
-//	git_oid_tostr(hash, sizeof(hash), oid);
-//	head_hash = hash;
 	char tmp[kBufSize];
 	FILE* pipe = popen("git rev-parse HEAD", "r");
 	if (!pipe) {
@@ -68,9 +49,6 @@ int main(int argc, char** argv) {
 				" <socket-path>" << std::endl;
 		return 1;
 	}
-
-	// Initialize the git2 library
-	git_libgit2_init();
 
 	std::string socket_path = argv[1];
 
