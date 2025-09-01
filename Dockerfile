@@ -21,5 +21,7 @@ RUN wget -q https://toolchains.bootlin.com/downloads/releases/toolchains/aarch64
 ENV PATH="/opt/aarch64--glibc--stable-2025.08-1/bin:${PATH}"
 
 WORKDIR /opt
-RUN git clone https://github.com/samkno1/networking.git && cd networking/
+
 RUN mkdir aarch64
+
+RUN git clone https://github.com/samkno1/networking.git
