@@ -31,8 +31,8 @@ $ ./client /tmp/socket TEST
 ```
 
 ## Cross-compile app for aarch64
-From /opt/
 ```
+$ cd /opt/
 $ aarch64-linux-g++ networking/server.cpp -o aarch64/server \
     --sysroot /opt/aarch64--glibc--stable-2025.08-1/aarch64-buildroot-linux-gnu/sysroot
 $ aarch64-linux-g++ networking/client.cpp -o aarch64/client \
