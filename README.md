@@ -20,6 +20,7 @@ docker run -it networking /bin/bash
 There are 2 applications: server and client.
 ```
 $ cd networking/
+$ git pull
 $ g++ server.cpp -o server
 $ g++ client.cpp -o client
 ```
